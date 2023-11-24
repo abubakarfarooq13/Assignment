@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&family=Roboto&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+
+.header {
+  padding: 0 4.8rem;
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  background: rgb(44, 120, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(44, 120, 255, 1) 0%,
+    rgba(33, 189, 85, 1) 54%,
+    rgba(177, 21, 150, 1) 100%
+  );
+  position: relative;
+  transition: 0.3s;
+  z-index: 9999;
+}
+.header .logo {
+  height: 10rem;
+}
+.navBarList {
+  display: flex;
+  gap: 4.8rem;
+  list-style: none;
+}
+.navBarLink {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.navBarLink:hover {
+  color: #010f0d;
+}
+.active {
+  color: #e0ff58;
+}
+.active:hover {
+  color: #020000;
+}
+
+.mainBtn {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 2.2rem;
+  right: 5rem;
+  gap: 1.5rem;
+}
+.signUp,
+.logIn {
+  border-radius: 1rem;
+  height: 5rem;
+  width: 7rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 1rem rgb(255, 255, 255);
+  background-color: #000000;
+  cursor: pointer;
+  transition: 0.3s;
+  color: rgb(255, 255, 255);
+}
+.signUp:hover,
+.logIn:hover {
+  transform: scale(1.1);
+  box-shadow: none;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.section {
+  padding: 9.6rem 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lobster Two", sans-serif;
+  background-image: url(../assets/mainBackground.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* filter:brightness(40%); */
+  background-blend-mode: darken;
+}
+.mainHeading {
+  width: 50%;
+  height: 50%;
+  backdrop-filter: blur(0.5rem);
+  border-radius: 1.5rem;
+  background-image:linear-gradient(rgba(15, 1, 15, 0.363),rgba(255, 42, 70, 0.212)) ;
+  padding: 2rem 3rem;
+  border: 1px solid rgb(136, 129, 129);
+  box-shadow: 0 0 1rem rgb(177, 173, 173);
+  transition: 0.3s;
+}
+.mainHeading:hover {
+  transform: scale(1.1);
+}
+
+.section h1 {
+  font-size: 9.5rem;
+  color:#ffffff;
+  text-align: center;
+  
+}
+.section p {
+  
+  text-align: center;
+  font-size: 3.2rem;
+  color: white;
+}
+.line {
+  border: 2px solid black;
+  width: 2.7rem;
+  height: 0.5rem;
+  background-color: black;
+  border-radius: 0.3rem;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+#line1 {
+  transform: translateY(1.5rem);
+}
+#line3 {
+  transform: translateY(-1.5rem);
+}
+.icon .navBarLink {
+  background-color: #fff;
+}
+.icon #line1 {
+  transform: translateY(4px) rotate(-45deg);
+}
+.icon #line3 {
+  transform: translateY(-6px) rotate(45deg);
+}
+.icon #line2 {
+  opacity: 0;
+}
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+            Break Point
+////////////////////////////////*/
+@media (max-width: 62rem) {
+  .line {
+    opacity: 1;
+  }
+
+  .mobileNavbarBtn {
+    display: block;
+    z-index: 999;
+    cursor: pointer;
+  }
+
+  .mainBtn {
+    position: relative;
+    right: 8.4%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .navBar {
+    /* display: none; */
+    width: 100%;
+    height: 100vh;
+    background: #b71bd6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 999;
+  }
+  .navBarList {
+    flex-direction: column;
+    align-items: center;
+  }
+  .active .navBar {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .navBarLink:link,
+  .navBarLink:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fffefe;
+    transition: 0.3s;
+  }
+}
+@media (max-width: 772px) {
+  .mainBtn {
+    position: relative;
+    right: 11%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media (max-width: 604px) {
+  .mainBtn {
+    position: relative;
+    right: 14%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 35em) {
+  .header {
+    padding: 0 2.4rem;
+  }
+  .header .logo {
+    width: 40%;
+  }
+  .mainBtn {
+    position: relative;
+    right: 15%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
